@@ -1,0 +1,13 @@
+.hgignore
+
+.hg:
+00changelog.i
+branch
+cache/
+dirstate
+hgrc
+requires
+store/
+undo.backup.branch.bck
+undo.desc
+wcache/
