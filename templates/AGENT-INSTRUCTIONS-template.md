@@ -11,10 +11,13 @@ Profile: `[PROFILE]` — see `[PATH]/profiles/[PROFILE]/` for PRD sections and t
 
 ## Creating New Work
 
-- New projects or major components: see `[PATH]/create-prd.md`
-- Features, bug fixes, enhancements:
-  1. Read `tasks/next-ids.md` for next available ID
-  2. Follow `[PATH]/create-task.md`
+**Triggers** — when user says:
+- "New project:" or "New product:" → Read `[PATH]/create-prd.md`, follow its process (ask questions → create PRD → generate tasks). Do NOT start implementation.
+- "New feature:" or "New task:" → Read `[PATH]/create-task.md`, follow its process
+
+For features, bug fixes, enhancements without trigger phrase:
+1. Read `tasks/next-ids.md` for next available ID
+2. Follow `[PATH]/create-task.md`
 
 ## Communication
 
@@ -25,6 +28,9 @@ Use plain language accessible to developers of all experience levels:
 - Task descriptions should be understandable without deep framework knowledge
 
 ## Guardrails
+
+### Task First
+Before writing implementation code: confirm an active task exists in `tasks/index.md`. No matching task → create one or ask user which task this belongs to.
 
 ### File Paths
 - Use relative paths for all project files (e.g., `src/`, `internal/`, not `/home/user/...`)

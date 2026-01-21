@@ -11,3 +11,4 @@ store/
 undo.backup.branch.bck
 undo.desc
 wcache/
+.hg

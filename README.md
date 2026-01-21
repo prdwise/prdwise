@@ -1,3 +1,4 @@
+Mirror of mercurial repo at [PRDwise heptapod](https://heptapod.host/prdwise)
 prdwise
 ==========
 

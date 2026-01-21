@@ -17,6 +17,8 @@ Terse rules for agentic editors. Reference or symlink this file from your projec
 2. If resuming: `grep "^State:\|^Next:" tasks/details/<id>.md` for current state
 3. If starting fresh: ask user which task to work on
 
+**Before implementing anything**: Confirm you have an active task in `index.md`. If user requests work with no matching task, create one first or ask which existing task it belongs to. Never write code without a task.
+
 ## Session End
 
 Update header in `tasks/details/<id>.md`:
@@ -91,7 +93,7 @@ Agents may mark individual "Done when" items as `[x]` during work. State change 
    - Keep: title, 1-3 sentence summary, files touched, key decisions, date
    - Remove: code examples, step-by-step instructions, specs
    - Target: 15-50 lines
-2. Move: `tasks/details/<id>.md` → `archives/YYYYMM/<id>.md`
+2. Create `archives/YYYYMM/` if missing; move `tasks/details/<id>.md` there
 3. Remove line from `tasks/index.md`
 
 ## Backlog
@@ -110,9 +112,11 @@ Increments: +5 top-level, +0.5 subtask. Backlog prefix: `bl`
 
 ## Critical Rules
 
+**TASK FIRST**: User asks for implementation? STOP. Check `tasks/index.md` for matching task. No match → create task or clarify with user. Never write implementation code without an active task.
+
 **Task Management**: Never create directly in `archives/` (archive only via workflow). Always read `next-ids.md` first. Always update all three files. Archive only named task, never batch.
 
-**Workflow**: Never implement without active task in `index.md`. Never skip PRD to implementation - generate tasks first. All work tracked before starting.
+**Workflow**: Never skip PRD to implementation - generate tasks first. All work tracked before starting.
 
 **Paths**: Use relative paths from project root (`src/main.go`, not `/home/.../src/main.go`). Exception: `~/prdwise/` for framework refs. Never create files outside cwd. Verify no leading `/` before file operations.
 

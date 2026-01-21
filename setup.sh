@@ -203,7 +203,16 @@ if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
     ${EDITOR:-vi} "$AGENT_FILE"
 fi
 
-read -p "Review tasks/next-ids.md (task categories)? [Y/n] " -n 1 -r
+echo ""
+echo -e "${YELLOW}Task Categories${NC}"
+echo "tasks/next-ids.md defines how tasks are organized. Each category gets a prefix:"
+echo "  - 'g' for backend tasks → g5, g10, g15..."
+echo "  - 'm' for docs tasks → m5, m10, m15..."
+echo ""
+echo "Edit to match YOUR project. Delete categories you won't use, rename others."
+echo "Example: a CLI tool might only need 'c' (core) and 'm' (docs)."
+echo ""
+read -p "Edit task categories now? [Y/n] " -n 1 -r
 echo ""
 if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
     ${EDITOR:-vi} "tasks/next-ids.md"
